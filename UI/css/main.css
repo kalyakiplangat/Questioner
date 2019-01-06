@@ -74,7 +74,7 @@ html {
   }
   #bg-cover{
     min-height: 400px;
-    background: url(../img/splash.jpg) no-repeat 0 -400px;
+    background: url(../images/splash.jpg) no-repeat 0 -400px;
     text-align: center;
     color: rgb(241, 247, 248);
     background-position: center;
@@ -91,6 +91,9 @@ html {
   }
   form p{
     padding: 4px;
+  }
+  #para{
+    text-align: center;
   }
   .footer {
     position: absolute;
