@@ -1,0 +1,56 @@
+.side-nav{
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 20%;
+    overflow: hidden;
+    height: 100%;
+    background-color: #ababaf
+  }
+.side-nav li a{
+    display: block;
+    color: #ffffff;
+    padding: 10px 14px;
+    width: 90%;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 3px;
+    border: 1px solid #e4e3e3;
+    
+  }
+  .side-panel{
+    float: left;
+    margin-left: 21%;
+    padding: 0;
+    position: fixed;
+    overflow: hidden;
+  }
+  .meetups{
+      background-color: #ababaf;
+      color: #ffffff;
+      float: left;
+      margin: 50px;
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      text-align: center;
+      line-height: 8em;
+      border-radius: 50%;
+  }
+  .users{
+    background-color: #ababaf;
+    color: #ffffff;
+    float: left;
+    margin: 50px;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    text-align: center;
+      line-height: 8em;
+    border-radius: 50%;
+}
