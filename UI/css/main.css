@@ -179,7 +179,30 @@ html {
    border-radius: 5px;
    background-color: #eff6fa;
  }
-
+ section .left-quiz{
+   float: left;
+   width: 59%;
+   margin-top: 40px;
+   margin-right: 6px;
+   height: auto;
+ }
+ .bg-color{
+   border: 1px solid #ababaf;
+   padding: 6px;
+   margin: 3px;
+   border-radius: 3px;
+ }
+ .left-quiz p, h4{
+   padding: 0 6px;
+ }
+ .right-quiz{
+   float: left;
+   width: 39%; 
+   margin-top: 21px;
+ }
+ .right-quiz form{
+   width: 100%;
+ }
 
 
   @media only screen and (max-width:500px){
