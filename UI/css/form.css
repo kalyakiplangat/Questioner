@@ -6,9 +6,17 @@ form{
     background-color: rgba(53, 66, 74, 0.5);
     margin: 20px auto;
     border-radius: 5px;
+    padding: 6px;
 }
 label{
     display: block;
+}
+select, textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
 }
 input[type=email], [type=text], [type=password]{
     padding: 10px;
