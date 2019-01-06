@@ -62,21 +62,15 @@ html {
     float:right;
     margin-top:10px;
   }
-  
-  header .highlight, header .current a{
-    color:#e8491d;
-    font-weight:bold;
-  }
-  
   header a:hover{
     color:#cccccc;
     font-weight:bold;
   }
   #bg-cover{
     min-height: 400px;
-    background: url(../images/splash.jpg) no-repeat 0 -400px;
+    background: url(../images/home.jpg) no-repeat 0 -400px;
     text-align: center;
-    color: rgb(241, 247, 248);
+    color: rgb(8, 8, 8);
     background-position: center;
     background-size: cover;
   
@@ -148,6 +142,46 @@ html {
   .meet{
     text-align: center;
   }
+  section .left-aside{
+    width: 45%;
+    float: left;
+    margin-right: 8px;
+    margin-top: 15px;
+    border-radius: 5px;
+    padding: 8px;
+    border: 2px solid #e4e3e3;
+    background-color: #ababaf;
+  }
+  #user-profile{
+    float: left;
+    width: 40%;
+  }
+  #user-feeds{
+    float: left;
+    width: 45%;
+  }
+  .left-aside img{
+    width: 100%;
+    border-radius: 50%;
+    max-width: 100px;
+    height: auto;
+  }
+  section .top-feeds{
+    float: left;
+    width: 49%;
+    margin-top: 15px;
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #e4e3e3;
+  }
+ button{
+   padding: 4px;
+   border-radius: 5px;
+   background-color: #eff6fa;
+ }
+
+
+
   @media only screen and (max-width:500px){
     .box{
       width: 100%;
