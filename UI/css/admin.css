@@ -25,6 +25,7 @@
   }
   .side-panel{
     float: left;
+    width: 70%;
     margin-left: 21%;
     position: fixed;
     overflow: hidden;
@@ -64,4 +65,7 @@
 form h4{
   margin: 0;
   padding: 2px;
+}
+.box button[name=delete]{
+  background-color: #ec2f2f;
 }
