@@ -26,7 +26,6 @@
   .side-panel{
     float: left;
     margin-left: 21%;
-    padding: 0;
     position: fixed;
     overflow: hidden;
   }
@@ -53,4 +52,16 @@
     text-align: center;
       line-height: 8em;
     border-radius: 50%;
+}
+.side-panel form{
+  margin: 20px 50px;
+  background-color: #ababaf;
+}
+.side-panel form .form-row{
+  padding: 8px;
+  margin: 0 auto;
+}
+form h4{
+  margin: 0;
+  padding: 2px;
 }
