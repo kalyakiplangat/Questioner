@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <title>Questioner</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1> Questioner</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="meetups.html">Meetups</a></li>
+                    <li><a href="logout.html">Sign out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <section>
+            <div class="side-nav">
+                <ul>
+                    <li><a href="createmeetups.html">Create Meetups</a></li>
+                    <li><a href="deletemeetups.html">Delete Meetups</a></li>
+                    <li><a href="signout.html">Sign out</a></li>
+                </ul>
+            </div>
+        </section>
+        <aside>
+            <div class="side-panel">
+                <form action="" method="">
+                    <h4>Create Meetups</h4>
+                    <div class="form-row">
+                        <label for="title"> Title: </label>
+                        <input type="text" name="title" placeholder="Enter the title of the meetup" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="title"> Desciption: </label>
+                        <input type="text" name="Desciption" placeholder="Enter the title of the meetup" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="title"> Facilitator: </label>
+                        <input type="text" name="facilitator" placeholder="Facilitator name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="title"> Location: </label>
+                        <input type="text" name="location" placeholder="Enter the location" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="title"> Date: </label>
+                        <input type="date" name="date" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="submit" name="Create" value="Create">
+                    </div>
+                </form>
+            </div>
+        </aside>
+    </div>
+    </div>
+</body>
+
+</html>

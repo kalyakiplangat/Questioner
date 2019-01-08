@@ -1,0 +1,224 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+    .container{
+      width:80%;
+      margin:auto;
+      padding: 0;
+      overflow:hidden;
+    }
+    
+  ul{
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  }
+  header{
+    background:#35424a;
+    color:#ffffff;
+    padding-top:15px;
+    min-height:50px;
+  }
+  
+  header a{
+    color:#ffffff;
+    text-decoration:none;
+    text-transform: uppercase;
+    font-size:12px;
+  }
+  a{
+    text-decoration: none;
+  }
+  header li{
+    float:left;
+    display:inline;
+    padding: 0 20px 0 20px;
+  }
+  
+  header #branding{
+    float:left;
+  }
+  
+  header #branding h1{
+    margin:0;
+  }
+  
+  header nav{
+    float:right;
+    margin-top:10px;
+  }
+  header a:hover{
+    color:#cccccc;
+    font-weight:bold;
+  }
+  #bg-cover{
+    min-height: 400px;
+    background: url(../images/home.jpg) no-repeat 0 -400px;
+    text-align: center;
+    color: rgb(8, 8, 8);
+    background-position: center;
+    background-size: cover;
+  
+  }
+  #bg-cover h1{
+    margin-top:100px;
+    font-size: 55px;
+    margin-bottom: 10px
+  }
+  #bg-cover p{
+    font-size: 20px;
+  }
+  form p{
+    padding: 4px;
+  }
+  #para{
+    text-align: center;
+  }
+  .footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 4px;
+    background-color: rgba(53, 66, 74, 0.9);
+    color: #ffffff;
+    text-align: center;
+  }
+  .box{
+    width: 31%;
+    background-color: #ffffff;
+    float: left;
+    border: 1px solid rgb(219, 217, 217);
+    border-radius: 10px;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+    min-height: 250px;
+  }
+  .image img{
+    padding: 0;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    max-width: 400px;
+    max-height: 150px;
+    height: auto;
+  }
+  .box p{
+    padding: 2px;
+    clear: both;
+    font-size: 14px;
+  }
+  .box button{
+    padding: 4px 7px;
+    border-radius: 8px;
+    margin: 6px;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: rgba(53, 66, 74, 0.9);
+  }
+  .desc{
+    max-height: 100px;
+    overflow: hidden;
+    
+  }
+  .date{
+    padding: 0;
+    margin: 0;
+  }
+  .meet{
+    text-align: center;
+  }
+  section .left-aside{
+    width: 45%;
+    float: left;
+    margin-right: 8px;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 8px;
+    border: 2px solid #e4e3e3;
+    background-color: #ababaf;
+  }
+  #user-feeds{
+    float: left;
+    width: 54%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    padding: 8px 16px;
+    border: 1px solid #ababaf;
+  }
+  .left-aside img{
+    width: 100%;
+    border-radius: 50%;
+    max-width: 250px;
+    height: auto;
+  }
+  .top-feeds{
+    clear: both;
+    width: 100%;
+    margin-top: 40px;
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #e4e3e3;
+  }
+  form  button{
+    line-height: 1em;
+    margin-top: 0;
+  }
+  .bg-color .form-row textarea{
+    margin-top: 3px;
+    padding: 4px;
+  }
+ button{
+   margin-top: 0;
+   padding: 4px;
+   border-radius: 5px;
+   background-color: #eff6fa;
+ }
+ section .left-quiz{
+   float: left;
+   width: 59%;
+   margin-top: 40px;
+   margin-right: 6px;
+   height: auto;
+ }
+ .bg-color{
+   border: 1px solid #ababaf;
+   padding: 6px;
+   margin: 3px;
+   border-radius: 3px;
+ }
+ .left-quiz p, h4{
+   padding: 0 6px;
+ }
+ .right-quiz{
+   float: left;
+   width: 39%; 
+   margin-top: 21px;
+ }
+ .right-quiz form{
+   width: 100%;
+ }
+
+
+  @media only screen and (max-width:500px){
+    .box{
+      width: 100%;
+    }
+  }
+  
+  
