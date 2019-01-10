@@ -98,7 +98,7 @@ class RsvpToMeetup(Resource):
         status = status.lower()
 
         if (status != "yes" and status != "no" and status != "maybe"):
-            return {"error": "Status should be a yes, no or maybe"}
+            return {"error": "Status should be a Yes, No or Maybe"}
 
         meetup = meetup_model.Meetups.get_specific_meetup(meetup_id)
         if meetup:
