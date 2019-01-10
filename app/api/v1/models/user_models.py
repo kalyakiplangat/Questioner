@@ -5,10 +5,10 @@ user_accounts = []
 user_id = 1
 
 class Members(Validations):
-    """A class to represent the user model"""
+    """A class user model"""
 
     def create_account(self, first_name, last_name, other_name, email, phone_number, username, password, registered, isAdmin):
-        """method to add new user to user_accounts list"""
+        """method adds new user"""
         new_user = dict(
             user_id = len(user_accounts) + 1,
             first_name = first_name,

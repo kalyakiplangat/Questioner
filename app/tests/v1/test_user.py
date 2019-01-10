@@ -31,7 +31,7 @@ class TestUser(BaseTest):
     def test_existing_username(self):
 
         with self.client:
-            #register user
+            '''Register a new user'''
 
             register1 = {
                 "first_name": "cat",
@@ -44,7 +44,7 @@ class TestUser(BaseTest):
             }
             self.client.post(signup_url, data = json.dumps(register1), content_type = "application/json")
 
-            #register with existing username
+            '''register with existing username'''
             new_user = {
                 "first_name": "cat",
                 "last_name": "faith",
