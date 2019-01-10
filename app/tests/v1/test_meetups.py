@@ -13,7 +13,7 @@ class TestMeetups(BaseTest):
   #Test meetup class
     def test_create_meetup(self):
         with self.client:
-            meetup_payload = {"location": "roysambu", "images": "url", "topic": "topic", "happeningOn": "12-12-2019", "Tags": "python"}
+            meetup_payload = {"location": "Thika", "images": "url", "topic": "topic", "happeningOn": "1-2-2019", "Tags": "python flask"}
             response = self.client.post(create_meetup_url, data=json.dumps(meetup_payload), content_type="application/json")
             result = json.loads(response.data.decode("UTF-8"))
             
@@ -25,14 +25,14 @@ class TestMeetups(BaseTest):
     def test_get_all_meetups(self):
         #Get all the record of meetup
         with self.client:
-            meetup_payload = {"location": "roysambu", "images": "url", "topic": "topic", "happeningOn": "12-12-2019", "Tags": "python"}
+            meetup_payload = {"location": "thika", "images": "url", "topic": "topic", "happeningOn": "1-2-2019", "Tags": "python flask"}
             self.client.post(create_meetup_url, data=json.dumps(meetup_payload), content_type="application/json")
 
             result1 = self.client.get(get_all_url)
             self.assertEqual(result1.status_code, 200)
 
     def test_get_specific_meetup(self):
-        meetup_payload = {"meetup_id": 1, "location": "roysambu", "images": "url", "topic": "topic", "happeningOn": "12-12-2019", "Tags": "python"}
+        meetup_payload = {"meetup_id": 1, "location": "thika", "images": "url", "topic": "topic", "happeningOn": "1-2-2019", "Tags": "python flask"}
         self.client.post(create_meetup_url, data = json.dumps(meetup_payload), content_type="application/json")
 
         result2 = self.client.get(get_one_url)
@@ -41,7 +41,7 @@ class TestMeetups(BaseTest):
     def test_rsvp_meetup(self):
         #create_meetup
         with self.client:
-            meetup_payload = {"location": "limuru", "images": "url", "topic": "github", "happeningOn": "12-12-2019", "Tags": "github"}
+            meetup_payload = {"location": "gathiga", "images": "url", "topic": "Django", "happeningOn": "2-4-2019", "Tags": "Django"}
             self.client.post(create_meetup_url, data=json.dumps(meetup_payload), content_type="application/json")
 
             rsvp_payload = {"status": "yes"}

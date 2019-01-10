@@ -12,13 +12,13 @@ class TestUser(BaseTest):
     def test_signup(self):
         with self.client:
             signup_payload = {
-                "first_name": "cath",
-                "last_name": "faithe",
+                "first_name": "junet",
+                "last_name": "moha",
                 "other_name": "None",
-                "email": "me345@gmail.com",
-                "phone_number": "0303030",
-                "username": "ididiiu",
-                "password": "idididi"
+                "email": "moha@gmail.com",
+                "phone_number": "2542542",
+                "username": "juno",
+                "password": "252423"
             }
             response = self.client.post(signup_url, data=json.dumps(signup_payload), content_type="application/json")
             result = json.loads(response.data.decode("UTF-8"))
@@ -34,25 +34,25 @@ class TestUser(BaseTest):
             '''Register a new user'''
 
             register1 = {
-                "first_name": "cat",
-                "last_name": "faith",
-                "other_name": "Noone",
-                "email": "me@gmail.com",
-                "phone_number": "0303030",
-                "username": "idid",
-                "password": "idididi"
+                "first_name": "juno",
+                "last_name": "moha",
+                "other_name": "june",
+                "email": "june@gmail.com",
+                "phone_number": "254266",
+                "username": "june",
+                "password": "cnxcnxbn"
             }
             self.client.post(signup_url, data = json.dumps(register1), content_type = "application/json")
 
             '''register with existing username'''
             new_user = {
-                "first_name": "cat",
-                "last_name": "faith",
-                "other_name": "Noone",
-                "email": "me2@gmail.com",
-                "phone_number": "0303030",
-                "username": "idid",
-                "password": "idididi"
+                "first_name": "juno",
+                "last_name": "moha",
+                "other_name": "june",
+                "email": "june@gmail.com",
+                "phone_number": "254266",
+                "username": "june",
+                "password": "cnxcnxbn"
             }
             response2 = self.client.post(signup_url, data = json.dumps(new_user), content_type = "application/json")
             result3 = json.loads(response2.data.decode("UTF-8"))
@@ -69,26 +69,26 @@ class TestUser(BaseTest):
         with self.client:
             #register a user
             payload = {
-                "first_name": "cat",
-                "last_name": "faith",
-                "other_name": "Noone",
-                "email": "me@gmail.com",
-                "phone_number": "0303030",
-                "username": "idid",
-                "password": "idididi"
+                "first_name": "lord",
+                "last_name": "johnson",
+                "other_name": "kandi",
+                "email": "kandi@gmail.com",
+                "phone_number": "254254",
+                "username": "kandi",
+                "password": "45623"
             }
 
             self.client.post(signup_url, data = json.dumps(payload), content_type = "application/json")
 
             #register user with existing email
             payload3 = {
-                "first_name": "not",
-                "last_name": "name",
-                "other_name": "dontknow",
-                "email": "me@gmail.com",
-                "phone_number": "003030303",
-                "username": "myusername",
-                "password": "idididi"
+                "first_name": "lord",
+                "last_name": "johnson",
+                "other_name": "kandi",
+                "email": "kand@gmail.com",
+                "phone_number": "254254",
+                "username": "kandi",
+                "password": "45623"
             }
             register3 = self.client.post(signup_url, data = json.dumps(payload3), content_type = "application/json")
             result = json.loads(register3.data.decode("UTF-8"))
@@ -101,13 +101,13 @@ class TestUser(BaseTest):
         with self.client:
             #register new user
             payload4 = {
-                "first_name": "cathy",
-                "last_name": "faith",
-                "other_name": "omosh",
-                "email": "mine@gmail.com",
-                "phone_number": "0303030",
-                "username": "catherine",
-                "password": "cathyuser"
+                "first_name": "Lord",
+                "last_name": "Johnson",
+                "other_name": "Kandi",
+                "email": "kandi@gmail.com",
+                "phone_number": "205-256",
+                "username": "kandie",
+                "password": "12345"
             }
             self.client.post(signup_url, data = json.dumps(payload4), content_type = "application/json")
 

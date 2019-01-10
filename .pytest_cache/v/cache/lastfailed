@@ -1,4 +1,5 @@
 {
+  "app/tests/v1/test_meetups.py": true, 
   "app/tests/v1/test_meetups.py::MeetupsTestCase::test_create_meetup": true, 
   "app/tests/v1/test_meetups.py::MeetupsTestCase::test_create_meetup_badrequest": true, 
   "app/tests/v1/test_meetups.py::TestMeetups::test_create_meetup": true, 

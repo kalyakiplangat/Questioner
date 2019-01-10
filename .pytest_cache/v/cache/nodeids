@@ -1,10 +1,6 @@
 [
-  "app/tests/v1/test_meetups.py::TestMeetups::test_create_meetup",
-  "app/tests/v1/test_meetups.py::TestMeetups::test_get_all_meetups",
-  "app/tests/v1/test_meetups.py::TestMeetups::test_get_specific_meetup",
-  "app/tests/v1/test_meetups.py::TestMeetups::test_rsvp_meetup",
-  "app/tests/v1/test_user.py::TestUser::test_existing_email",
-  "app/tests/v1/test_user.py::TestUser::test_existing_username",
-  "app/tests/v1/test_user.py::TestUser::test_signup",
+  "app/tests/v1/test_user.py::TestUser::test_existing_email", 
+  "app/tests/v1/test_user.py::TestUser::test_existing_username", 
+  "app/tests/v1/test_user.py::TestUser::test_signup", 
   "app/tests/v1/test_user.py::TestUser::test_user_login"
 ]
