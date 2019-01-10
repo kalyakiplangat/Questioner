@@ -18,7 +18,7 @@ class TestMeetups(BaseTest):
             result = json.loads(response.data.decode("UTF-8"))
             
             self.assertEqual(result["status"], 201)
-            self.assertEqual(result["message"], "New meetup created successfully")
+            self.assertEqual(result["message"], "New meetup  created successfully")
             self.assertEqual(response.status_code, 201)
             self.assertTrue(response.content_type == "application/json")
 
