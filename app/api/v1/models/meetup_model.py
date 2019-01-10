@@ -4,51 +4,51 @@ import datetime
 from ...v1.models import user_models
 
 
-meetup_list = []
+meetup = []
 
 meetup_id = 1
 
 
 
 class Meetups(Validations):
-    """A class to represent the meetup model"""
+    """A meetup model"""
 
-    def create_meetup(self, createdOn, location, images, topic, happeningOn, Tags):
-        """method to add a meetup to the meetup list"""
+    def create_meetup(self, createdOn, location, images, topic, happeningOn, tags):
+        """add a meetup to the meetup"""
         new_meetup = dict(
-            meetup_id=len(meetup_list) + 1,
+            meetup_id=len(meetup) + 1,
             createdOn=datetime.datetime.now().strftime("%H:%M%P %A %d %B %Y"),
             location=location,
             images=images,
             topic=topic,
             happeningOn=happeningOn,
-            Tags=Tags,
+            tags=tags,
         )
 
-        payload = location, topic, happeningOn, Tags
-        strings = location, images, topic, Tags
-        if self.is_empty(payload) is True:
+        checks = location, topic, happeningOn, tags
+        strings = location, images, topic, tags
+        if self.is_empty(checks) is True:
             return {"error": "Please fill out all fields"}, 406
-        elif self.is_whitespace(payload) is True:
+        elif self.is_whitespace(checks) is True:
             return {"error": "Data cannot contain white strings"}, 406
         elif self.is_string(strings) is False:
             return {"error": "Input must be of type string"}, 406
         elif self.is_valid_date(happeningOn) is False:
             return {"error": "Date must be in the format DD-MM-YYYY"}
         else:
-            meetup_list.append(new_meetup)
+            meetup.append(new_meetup)
             return new_meetup
 
     def get_all_meetups(self):
-        if len(meetup_list) == 0:
+        if len(meetup) == 0:
             return False
         else:
-            return meetup_list
+            return meetup
 
 
     @staticmethod
     def get_specific_meetup(meetup_id):
-        meetup_item = [item for item in meetup_list if item["meetup_id"] == meetup_id]
+        meetup_item = [meet for meet in meetup if meet["meetup_method to id"] == meetup_id]
         if meetup_item:
             return meetup_item[0]
         return {"message": "Meetup record not found"}

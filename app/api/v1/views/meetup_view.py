@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, Blueprint, json, make_response
-from flask_restplus import Resource, reqparse, Namespace, fields, Api
+from flask_restplus import Api, Resource, reqparse, Namespace, fields
 
 from ...v1.models import meetup_model
 from ...v1.models import user_models
@@ -14,8 +14,8 @@ parser.add_argument("happeningOn", help="This field cannot be blank")
 parser.add_argument("Tags", help="This field cannot be blank")
 
 
-qs_meetups = Namespace("meetups", description="Meetups endpoints")
-mod_create = qs_meetups.model("Create a new meetup", {
+meetups = Namespace("meetups", description="Meetups endpoints")
+mod_create = meetups.model("Create a new meetup", {
     "createdOn":fields.String("Date meetup was created"),
     "location":fields.String("Location of the meetup"),
     "images":fields.String("URL of the images"),
@@ -25,10 +25,10 @@ mod_create = qs_meetups.model("Create a new meetup", {
 })
 
 
-@qs_meetups.route('')
+@meetups.route('')
 class CreateMeetup(Resource):
-    @qs_meetups.doc(security="apikey")
-    @qs_meetups.expect(mod_create)
+    @meetups.doc(security="apikey")
+    @meetups.expect(mod_create)
     def post(self):
         args = parser.parse_args()
         createdOn = args["createdOn"]
@@ -48,11 +48,11 @@ class CreateMeetup(Resource):
         
 
     
-@qs_meetups.route('/upcoming')
+@meetups.route('/upcoming')
 class GetAllMeetups(Resource):
-    @qs_meetups.doc(security="apikey")
+    @meetups.doc(security="apikey")
     def get(self):
-        all_meetups = meetup_model.meetup_list
+        all_meetups = meetup_model.meetup
         if len(all_meetups) == 0:
             return {
                 "status": 404,
@@ -65,9 +65,9 @@ class GetAllMeetups(Resource):
             }, 200
 
 
-@qs_meetups.route("/<int:meetup_id>")
+@meetups.route("/<int:meetup_id>")
 class GetMeetupById(Resource):
-    @qs_meetups.doc(security="apikey")
+    @meetups.doc(security="apikey")
     def get(self, meetup_id):
         single_meetup = meetup_model.Meetups.get_specific_meetup(meetup_id)
         if single_meetup:
@@ -81,15 +81,15 @@ class GetMeetupById(Resource):
         }, 404
 
 parser.add_argument("status", help="This field cannot be blank")
-mod_rsvp = qs_meetups.model("RSVP to a meetup", {
+mod_rsvp = meetups.model("RSVP to a meetup", {
     "status": fields.String("Must be a yes, no or maybe")
 })
 
 
-@qs_meetups.route("/<meetup_id>/rsvps")
+@meetups.route("/<meetup_id>/rsvps")
 class RsvpToMeetup(Resource):
-    @qs_meetups.doc(security="apikey")
-    @qs_meetups.expect(mod_rsvp)
+    @meetups.doc(security="apikey")
+    @meetups.expect(mod_rsvp)
 
     def post(self, meetup_id):
         args = parser.parse_args()
