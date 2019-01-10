@@ -29,6 +29,7 @@ mod_register = qs_users.model("Create a new account", {
 
 @qs_users.route('/signup')
 class RegisterUser(Resource):
+    #class register new user in the app
     @qs_users.doc(security="apikey")
     @qs_users.expect(mod_register)
 
@@ -82,6 +83,7 @@ mod_login = qs_users.model('Log into your account',{
 
 @qs_users.route('/login')
 class Login(Resource):
+    #login registered user
     @qs_users.expect(mod_login)
     def post(self):
         args = parser.parse_args()			
