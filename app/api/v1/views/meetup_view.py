@@ -82,7 +82,7 @@ class GetMeetupById(Resource):
 
 parser.add_argument("status", help="This field cannot be blank")
 mod_rsvp = meetups.model("RSVP to a meetup", {
-    "status": fields.String("Must be a yes, no or maybe")
+    "status": fields.String("Must be a Yes, No or Maybe")
 })
 
 
