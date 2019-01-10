@@ -10,8 +10,8 @@ install:
 
 # Run tests
 script:
-     - pytest --cov=app
-     - coveralls
+    - py.test  --cov-report term --cov=app/test/
 
 after_success:
     - coveralls
+    - codecov
