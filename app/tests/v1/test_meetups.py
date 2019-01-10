@@ -10,7 +10,7 @@ get_one_url = "api/v1/meetups/1"
 rsvp_url = "api/v1/meetups/1/rsvps"
 
 class TestMeetups(BaseTest):
-
+  #Test meetup class
     def test_create_meetup(self):
         with self.client:
             meetup_payload = {"location": "roysambu", "images": "url", "topic": "topic", "happeningOn": "12-12-2019", "Tags": "python"}
@@ -23,6 +23,7 @@ class TestMeetups(BaseTest):
             self.assertTrue(response.content_type == "application/json")
 
     def test_get_all_meetups(self):
+        #Get all the record of meetup
         with self.client:
             meetup_payload = {"location": "roysambu", "images": "url", "topic": "topic", "happeningOn": "12-12-2019", "Tags": "python"}
             self.client.post(create_meetup_url, data=json.dumps(meetup_payload), content_type="application/json")
