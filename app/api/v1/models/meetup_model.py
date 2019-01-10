@@ -34,7 +34,7 @@ class Meetups(Validations):
         elif self.is_string(strings) is False:
             return {"error": "Input must be of type string"}, 406
         elif self.is_valid_date(happeningOn) is False:
-            return {"error": "Date must be in the format DD-MM-YYYY"}
+            return {"error": "Date must be in this format DD-MM-YYYY"}
         else:
             meetup.append(new_meetup)
             return new_meetup
