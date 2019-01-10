@@ -80,7 +80,7 @@ class GetMeetupById(Resource):
             "response": "Meetup record not found"
         }, 404
 
-parser.add_argument("status", help="This field cannot be blank")
+parser.add_argument("status", help="This fields cannot be blank")
 mod_rsvp = meetups.model("RSVP to a meetup", {
     "status": fields.String("Must be a Yes, No or Maybe")
 })
