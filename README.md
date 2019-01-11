@@ -6,7 +6,6 @@ Badges
 [![Build Status](https://travis-ci.com/kalyakiplangat/Questioner.svg?branch=develop)](https://travis-ci.com/kalyakiplangat/Questioner)
 [![Coverage Status](https://coveralls.io/repos/github/kalyakiplangat/Questioner/badge.svg?branch=develop)](https://coveralls.io/github/kalyakiplangat/Questioner?branch=develop)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b7e6dd16f0c9616587df/maintainability)](https://codeclimate.com/github/gitlabhq/gitlab-ci/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/b7e6dd16f0c9616587df/test_coverage)](https://codeclimate.com/github/gitlabhq/gitlab-ci/test_coverage)
 
 Summary
 --------
