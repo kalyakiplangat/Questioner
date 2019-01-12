@@ -13,14 +13,14 @@ The Questioner app allows user to view meetups and can also post a question, upv
 It helps the meetup organizer prioritize for the questions for meetup
 
 Features
-A user should be able to sign up
-A user should be able to login
-A user should be able to post a question
-A user should be able to Upvote or Downvote a question
-A user should be able to comment on a question
-A user should view top questions feed
-An Admin should be able to create a Meetup
-An Admin should be able to delete a Meetup
+* A user should be able to sign up
+* A user should be able to login
+* A user should be able to post a question
+* A user should be able to Upvote or Downvote a question
+* A user should be able to comment on a question
+* A user should view top questions feed
+* An Admin should be able to create a Meetup
+* An Admin should be able to delete a Meetup
 
 Testing
 Challenge One
