@@ -6,26 +6,26 @@ from ...api.v1.models.basemodel import meetups
 
 
 class MeetupsTestCase(unittest.TestCase):
-    '''TTest cases'''
+    '''These are the test cases for meetups features'''
     def setUp(self):
         self.app = create_app(config='development')
         self.client = self.app.test_client()
 
         self.meetup = {
-            'location': 'Andela',
+            'location': 'IHub',
             'images': [],
-            'topic': 'FLask or Django',
+            'topic': 'Nairobi Go Meetup',
             'happeningOn': '2019-01-26',
             'tags': []
         }
 
         meetups.append({
             'id': 1,
-            'createdOn': '2019-01-12',
-            'location': 'Andela',
+            'createdOn': '2019-01-09',
+            'location': 'IHub',
             'images': [],
-            'topic': 'Flask or Django',
-            'happeningOn': '2019-01-15',
+            'topic': 'Nairobi Go Meetup',
+            'happeningOn': '2019-01-26',
             'tags': []
         })
 
@@ -39,7 +39,7 @@ class MeetupsTestCase(unittest.TestCase):
                                     content_type='application/json')
         self.assertEqual(response.status_code, 201)
         print('{} code'.format(response.status_code))
-        self.assertIn('Flask or Django', str(json.loads(response.data)))
+        self.assertIn('Nairobi Go Meetup', str(json.loads(response.data)))
 
     def test_create_meetup_badrequest(self):
         response = self.client.post('/api/v1/meetups',
@@ -51,12 +51,12 @@ class MeetupsTestCase(unittest.TestCase):
     def test_get_upcoming(self):
         response = self.client.get('/api/v1/meetups/upcoming')
         self.assertEqual(response.status_code, 200)
-        self.assertIn('Flask or Django', str(json.loads(response.data)))
+        self.assertIn('Nairobi Go Meetup', str(json.loads(response.data)))
 
     def test_get_meetup(self):
         response = self.client.get('/api/v1/meetups/1')
         self.assertEqual(response.status_code, 200)
-        self.assertIn('Flask or Django', str(json.loads(response.data)))
+        self.assertIn('Nairobi Go Meetup', str(json.loads(response.data)))
 
     def test_get_meetup_notfound(self):
         response = self.client.get('/api/v1/meetups/0')
@@ -71,7 +71,7 @@ class MeetupsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 201)
         data = json.loads(response.data)
         self.assertEqual(1, data['data'][0]['id'])
-        self.assertEqual('Flask or Django', data['data'][0]['topic'])
+        self.assertEqual('Nairobi Go Meetup', data['data'][0]['topic'])
     '''
 
     def test_create_rsvp_badrequest(self):

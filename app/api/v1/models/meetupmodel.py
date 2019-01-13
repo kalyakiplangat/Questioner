@@ -4,7 +4,7 @@ from .basemodel import BaseModel, meetups, rsvps
 
 
 class Meetups(BaseModel):
-    '''Meetup model'''
+    '''Meetup model handles the business logic for the meetups'''
     def __init__(self):
         super().__init__('meetupsdb')
 
@@ -23,12 +23,12 @@ class Meetups(BaseModel):
         self.save(meetup)
 
     def get_all(self):
-        '''All the meetup'''
+        '''Return all the meetups'''
         return meetups
 
 
 class RSVPS(BaseModel):
-    '''RSVP model'''
+    '''Handles rsvp business logic'''
     def __init__(self):
         super().__init__('rsvpsdb')
 
