@@ -2,7 +2,7 @@ from .basemodel import BaseModel, questions
 
 
 class Questions(BaseModel):
-    '''Questions Model handles the business logic for the questions'''
+    '''Questions Model '''
     def __init__(self):
         super().__init__('questiondb')
 
