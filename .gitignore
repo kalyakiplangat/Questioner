@@ -1,5 +1,11 @@
-.venv/
-*.pyc
-instance/
-__pycache__/
+env/
+
 __pycache__
+
+__pycache__/
+
+.vscode/
+
+settings.json
+
+.pytest_cache/

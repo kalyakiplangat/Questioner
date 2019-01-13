@@ -1,16 +1,21 @@
-language: python
-python:
-    - "3.6"
+  notification:
+      email: false
 
-# Install dependencies
-install:
-    - pip install -r requirements.txt
-    - pip install coveralls
-    - pip install codeclimate-test-reporter
+  language:
+   python
+  
+  python:
+  - "3.6"
 
-# Run tests
-script:
-    - py.test  --cov-report term --cov=app/test/
+  install:
+  - pip install -r requirements.txt
+  - pip install pytest-cov
 
-after_success:
-    - codecov
+  env: 
+  - APP_SETTINGS='development'
+  
+  script:
+  - py.test  --cov-report term --cov=app/test/v1
+
+  after_success:
+  - codecov
