@@ -1,34 +1,29 @@
-'''Define globally accessible lists to store data'''
+'''Global lists'''
 meetups = []
 questions = []
 rsvps = []
 
 
 class BaseModel(object):
-    '''This is the base class and will be the Parent class'''
+    '''Base class'''
     def __init__(self, db=''):
-        '''Initializes db type'''
         self.db = db
 
     def save(self, data={}):
-        '''saves data to db'''
         db_add = self.check_db()
         self.data = data
         db_add.append(data)
 
     def check_db(self):
-        '''Select a specified db type'''
         db_obj = dbconfig[self.db]
         return db_obj
 
     def return_data(self):
-        '''returns data that has been added successfully to the db'''
         if self.save:
             return self.data
         return None
 
     def find(self, id: int):
-        '''Generic find method returns tuple with index and item'''
         db_type = self.check_db()
 
         for index, item in enumerate(db_type):

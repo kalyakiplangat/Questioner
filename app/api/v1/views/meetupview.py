@@ -61,7 +61,7 @@ def get_by_id(id):
 
 @meetupreq.route('/meetups/<int:id>/rsvps', methods=['POST'])
 def post_rsvp(id):
-    '''Create RSVP for an event'''
+    '''RSVP for an event'''
     _, meetup = meetup_obj.find(id)
     if request.json:
         if meetup:
