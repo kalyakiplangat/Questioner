@@ -14,7 +14,7 @@ class MeetupsTestCase(unittest.TestCase):
         self.meetup = {
             'location': 'Andela',
             'images': [],
-            'topic': 'FLask or Django,
+            'topic': 'FLask or Django',
             'happeningOn': '2019-01-26',
             'tags': []
         }
