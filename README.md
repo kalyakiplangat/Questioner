@@ -1,89 +1,46 @@
-# Questioner
-This application enables meetup organizer to prioritize questions for meetup
+# Questioner API
+[![Build Status](https://travis-ci.org/j0nimost/Questioner.svg?branch=develop)](https://travis-ci.org/j0nimost/Questioner) [![codecov](https://codecov.io/gh/j0nimost/Questioner/branch/develop/graph/badge.svg)](https://codecov.io/gh/j0nimost/Questioner) [![Maintainability](https://api.codeclimate.com/v1/badges/9afd47aa96de42fcf690/maintainability)](https://codeclimate.com/github/j0nimost/Questioner/maintainability)
 
-Badges
-----------------
-[![Build Status](https://travis-ci.com/kalyakiplangat/Questioner.svg?branch=develop)](https://travis-ci.com/kalyakiplangat/Questioner)
-[![Coverage Status](https://coveralls.io/repos/github/kalyakiplangat/Questioner/badge.svg?branch=develop)](https://coveralls.io/github/kalyakiplangat/Questioner?branch=develop)
-[![Maintainability](https://api.codeclimate.com/v1/badges/b7e6dd16f0c9616587df/maintainability)](https://codeclimate.com/github/gitlabhq/gitlab-ci/maintainability)
 
-Summary
---------
-Questioner allows the meetup organizer to prioritize questions to be answered. Users vote on asked questions, and they bubble to the top or the bottom of the log.
+This is Andela's Bootcamp Challenge two. The challenge is to create an API implementation for Questioner.
 
-Find the UI [here](https://kalyakiplangat.github.io/Questioner/UI)
+## Summary
+The Questioner API will not use a database instead it uses data structures to store data in memory. The Questioner API uses the Flask framework for development. The Questioner API will handle features from questions and meetups.
 
-This project is managed using a pivotal tracker board. [View the board here](https://www.pivotaltracker.com/n/projects/2235263)
+### Version
+This is the first version `v1` of the api. All endpoints under version 1, will have a prefix url structure of `api/v1`
 
-Pre-requisites
-----------------------
-1. Python3
-2. Flask
-3. Flask restplus
-4. Postman
+## Features
 
-Getting started
---------------------
-1. Clone this repository
-```
-    https://github.com/kalyakiplangat/Questioner.git
-```
+| Task | Request |  Endpoint|
+| --- | --- | --- |
+| Create Meetup | POST | `/meetups` |
+| Get Meetup | GET | `/meetups/<id>` |
+| Get Meetups | GET | `/meetups/upcoming` |
+| Create Question | POST | `/questions` |
+| Upvote Question | PATCH | `/questions/<id>/upvote` |
+| Downvote Question | PATCH | `/questions/<id>/downvote` |
+| RSVP Meetup | POST | `/meetups/<id>/rsvps` |
 
-2. Navigate to the cloned repository
-```
-    cd Questioner
-```
+## Pivotal Tracker
+[This](https://www.pivotaltracker.com/n/projects/2235178) is the link to the Pivotal Stories. The Stories for develop are under the label `api`
 
-Installation
----------------------------------
-1. Create a virtual env
-```
-    python3 -m venv venv
-```
+## Requirements
+These are the basic requirements required to run Questioner API;
 
-2. Activate the virtual environment
-```
-    source venv/bin/activate
-```
+- Python 3.0 >
+- Virtualenv 
+- ...Others in `requirements.txt`
 
-3. Install git
-```
-    sudo apt-get install git-all
-```
+## Testing
 
-4. Switch to 'develop' branch
-```
-    git checkout develop
-```
+Run the following commands subsequently.
+- `git clone https://github.com/j0nimost/Questioner.git`
+- `cd Questioner/`
+- `virtualenv env`
+- `source .env`
+- `pip install -r requirements.txt`
+- `flask run`
 
-5. Install requirements
-```
-    pip install -r requirements.txt
-```
-Run the application
----------------------------------
-```
-    python3 run.py
-```
-
-When you run this application, you can test the following API endpoints using postman
------------------------------------------------
-
-| Endpoint | Functionality |
-----------|---------------
-POST/meetups | Create a meetup record
-GET/meetups/&lt;meetup-id&gt; | Fetch a specific meetup record
-GET /meetups/upcoming/ | Fetch all upcoming meetup records
-POST /questions | Create a question for a specific meetup
-PATCH /questions/&lt;question-id&gt;/upvote | Upvote (increase votes by 1) a specific question
-PATCH /questions/&lt;question-id&gt;/downvote | Downvote (decrease votes by 1) a specific question
-POST /meetups/&lt;meetup-id&gt;/rsvps | Respond to meetup RSV
-
-Authors
------------------------------
-**Cheruiyot Enock** - _Initial work_-[kalyakiplangat](https://github.com/kalyakiplangat)
-
-Acknowledgements
---------------------------------
-1. Andela Workshops
-2. Team members
+## Author
+John Nyingi

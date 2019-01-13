@@ -1,40 +1,30 @@
-"""configurtion file for the app"""
+import os
+
+
 class Config(object):
-    """Parent configuration class"""
-
+    '''Base Configuration class'''
     DEBUG = False
-    SECRET_KEY = "pleasedontguess"
-    ENV = "development"
-    JSON_SORT_KEYS = False
 
 
-class DevelopmentConfig(Config):
-    """configurations for development environment"""
-
-    DEBUG = True
-
-
-class TestingConfig(Config):
-    """configurations for testing environment"""
-
-    DEBUG = True
-
-
-class StagingConfig(Config):
-    """configurations for staging environment"""
-
-    DEBUG = True
-
-
-class ProductionConfig(Config):
-    """configurations for production environment"""
-
+class Production(Config):
+    '''Production Environment variables'''
     DEBUG = False
+    TESTING = False
+
+
+class Testing(Config):
+    '''Testing Environment Variables'''
+    DEBUG = True
+    TESTING = True
+
+
+class Development(Config):
+    '''Development Environment Variables'''
+    DEBUG = True
 
 
 app_config = {
-    "development": DevelopmentConfig,
-    "testing": TestingConfig,
-    "staging": StagingConfig,
-    "production": ProductionConfig,
+    'development': Development,
+    'testing': Testing,
+    'production': Production
 }
