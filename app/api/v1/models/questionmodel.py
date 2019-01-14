@@ -2,13 +2,13 @@ from .basemodel import BaseModel, questions
 
 
 class Questions(BaseModel):
-    '''Questions Model handles the business logic for the questions'''
+    '''Questions Model'''
     def __init__(self):
         super().__init__('questiondb')
 
     def create_question(self, userid: int, meetupid: int, title: str,
                         body: str):
-        '''creates questions about a meetup'''
+        '''creates questions to a specific meetup'''
         question = {
             'id': len(questions)+1,
             'userid': userid,
@@ -21,7 +21,7 @@ class Questions(BaseModel):
 
     def update_votes(self, id: int, votes: int):
         '''
-         Updates a question by providing votes, expects a question object
+         Upvote or downvote a questions posted
         '''
         _, question = self.find(id)
         question['votes'] += votes

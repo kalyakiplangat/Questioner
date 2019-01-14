@@ -5,35 +5,35 @@ rsvps = []
 
 
 class BaseModel(object):
-    '''This is the base class and will be the Parent class'''
+    '''Base class model'''
     def __init__(self, db=''):
-        '''Initializes db type'''
+        '''Initializes the database'''
         self.db = db
 
     def save(self, data={}):
-        '''saves data to db'''
+        '''saves db'''
         db_add = self.check_db()
         self.data = data
         db_add.append(data)
 
     def check_db(self):
-        '''Select a specified db type'''
-        db_obj = dbconfig[self.db]
-        return db_obj
+        '''Select a specified db '''
+        db_object = db_select[self.db]
+        return db_object
 
     def return_data(self):
-        '''returns data that has been added successfully to the db'''
+        '''Return db data'''
         if self.save:
             return self.data
         return None
 
     def find(self, id: int):
-        '''Generic find method returns tuple with index and item'''
+        '''find a specific data in db'''
         db_type = self.check_db()
 
-        for index, item in enumerate(db_type):
-            if id == item['id']:
-                return index, item
+        for index, items in enumerate(db_type):
+            if id == items['id']:
+                return index, items
         return None, None
 
     def update(self, data_update={}):
@@ -46,7 +46,7 @@ class BaseModel(object):
             return data
 
     def delete(self, index: int):
-        '''Delete existing data'''
+        '''Delete data'''
         db = self.check_db()
 
         if index and isinstance(db, list):
@@ -54,7 +54,7 @@ class BaseModel(object):
             return True
         return False
 
-dbconfig = {
+db_select = {
     'meetupsdb': meetups,
     'questiondb': questions,
     'rsvpsdb': rsvps
