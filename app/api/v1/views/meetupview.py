@@ -4,13 +4,13 @@ from werkzeug.exceptions import BadRequest
 
 from ..models.meetupmodel import Meetups, RSVPS
 
-meetupreq = Blueprint('meetupreq', __name__, url_prefix='/api/v1')
+meetupre = Blueprint('meetupre', __name__, url_prefix='/api/v1')
 
 meetup_obj = Meetups()
 rsvp_obj = RSVPS()
 
 
-@meetupreq.route('/meetups', methods=['POST'])
+@meetupre.route('/meetups', methods=['POST'])
 def post():
     '''create meetup endup'''
     if request.json:
@@ -30,7 +30,7 @@ def post():
         return make_response(jsonify({'message': 'invalid request type'}), 400)
 
 
-@meetupreq.route('/meetups/upcoming', methods=['GET'])
+@meetupre.route('/meetups/upcoming', methods=['GET'])
 def get():
     '''Get all upcoming meetups'''
     meetups = meetup_obj.get_all()
@@ -44,9 +44,9 @@ def get():
     return response
 
 
-@meetupreq.route('/meetups/<int:id>', methods=['GET'])
+@meetupre.route('/meetups/<int:id>', methods=['GET'])
 def get_by_id(id):
-    '''Get a specific meetup with a particular ID'''
+    '''Get a specific meetup'''
     _, meetup_ = meetup_obj.find(id)
     if meetup_:
         meetup = {
@@ -59,7 +59,7 @@ def get_by_id(id):
     return make_response(jsonify({"message": "Not Found"}), 404)
 
 
-@meetupreq.route('/meetups/<int:id>/rsvps', methods=['POST'])
+@meetupre.route('/meetups/<int:id>/rsvps', methods=['POST'])
 def post_rsvp(id):
     '''Create RSVP for an event'''
     _, meetup = meetup_obj.find(id)
