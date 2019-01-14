@@ -11,4 +11,4 @@ else:
     app = create_app(config_)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

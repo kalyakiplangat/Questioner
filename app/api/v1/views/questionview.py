@@ -8,7 +8,7 @@ ques = Blueprint('ques', __name__, url_prefix='/api/v1')
 quest_obj = Questions()
 
 
-@ques.route('/questions', methods=['POST'])
+@ques.route('/questions', methods=['POST', 'GET'])
 def post():
     '''Creates Question'''
     if request.json:

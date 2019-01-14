@@ -10,7 +10,7 @@ meetup_obj = Meetups()
 rsvp_obj = RSVPS()
 
 
-@meetupre.route('/meetups', methods=['POST'])
+@meetupre.route('/meetups', methods=['POST', 'GET'])
 def post():
     '''create meetup endup'''
     if request.json:
