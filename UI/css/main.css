@@ -214,6 +214,12 @@ html {
    width: 100%;
  }
 
+  @media only screen and (max-width:700px){
+    .box{
+      width: 50%;
+    }
+}
+
 
   @media only screen and (max-width:500px){
     .box{
@@ -222,6 +228,6 @@ html {
     form{
     width: 100%;
 }
-  }
+}
   
   
