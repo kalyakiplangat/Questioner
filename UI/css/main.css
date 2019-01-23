@@ -217,6 +217,7 @@ html {
   @media only screen and (min-width:500px){
     .box{
       width: 47%;
+      float: left;
     }
 }
 
