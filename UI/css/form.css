@@ -2,7 +2,7 @@
     box-sizing: border-box;
   }
 form{
-    width: 500px;
+    width: 50%;
     background-color: rgba(53, 66, 74, 0.5);
     margin: 20px auto;
     border-radius: 5px;
