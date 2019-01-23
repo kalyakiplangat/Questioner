@@ -218,6 +218,7 @@ html {
     .box{
       width: 47%;
       float: left;
+      min-height: 250px;
     }
 }
 
